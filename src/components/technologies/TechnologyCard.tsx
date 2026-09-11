@@ -1,0 +1,24 @@
+import React from 'react';
+import type { ITechnologies } from '../../type';
+import { IoMdStar } from 'react-icons/io';
+
+const TechnologyCard = ({ technology }: { technology: ITechnologies }) => {
+    console.log(technology);
+    return (
+        <div className='bg-white border border-gray-300 rounded-xl p-3 space-y-3 '>
+            <div className='flex justify-between items-center'>
+                <img className='w-10 h-10 bg-white border-2 rounded-full border-amber-50 text-shadow-zinc-200 p-1 ' src={technology.icon} alt={technology.name} />
+                <div className='bg-[#D1FAE5] text-[#059669] rounded-2xl py-1 px-2'><span>{technology.badge}</span></div>
+            </div>
+            <h3 className='text-2xl font-bold font-primary'>{technology.name}</h3>
+            <p className='font-secondary'>{technology.description}</p>
+            <div className='flex justify-between items-center mt-3 pt-2 border-t-1 border-gray-100'>
+                <div className='bg-[#F1F5F9] rounded-2xl px-2 py-1'>{technology.category}</div>
+                <div>{technology.difficulty}</div>
+                <div className='flex items-center'><span><IoMdStar /></span> {technology.rating}</div>
+            </div>
+        </div>
+    );
+};
+
+export default TechnologyCard;
