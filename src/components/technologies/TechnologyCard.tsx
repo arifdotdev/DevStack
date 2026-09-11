@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { ITechnologies } from '../../type';
 import { IoMdStar } from 'react-icons/io';
 
-const TechnologyCard = ({ technology }: { technology: ITechnologies }) => {
-    console.log(technology);
+interface TechnologyProps {
+    technology: ITechnologies
+    stacks: ITechnologies
+    setStacks: Dispatch<SetStateAction<ITechnologies[]>>
+}
+
+const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
+
+    const [isSelected, setIsSelected] = useState<boolean>(false)
+    const handleAddStack = () => {
+
+        setIsSelected(true)
+    }
+
+
     return (
         <div className='bg-white border border-gray-300 rounded-xl p-3 space-y-3 '>
             <div className='flex justify-between items-center'>
@@ -17,7 +30,10 @@ const TechnologyCard = ({ technology }: { technology: ITechnologies }) => {
                 <div>{technology.difficulty}</div>
                 <div className='flex items-center'><span><IoMdStar /></span> {technology.rating}</div>
             </div>
-            <button className='bg-black text-xl font-bold text-white font-primary py-2 w-full border rounded-2xl mt-3 cursor-pointer active'>Add to Stock</button>
+            <button
+                onClick={() => handleAddStack()}
+                className={`bg-black text-xl font-bold text-white font-primary py-2 w-full border rounded-2xl mt-3 cursor-pointer ${isSelected ? "active" : ""}`} disabled={isSelected}
+            >Add to Stock</button>
         </div>
     );
 };

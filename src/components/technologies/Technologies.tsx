@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import TechnologiesCards from './TechnologiesCards';
 import TechnologiesStack from './TechnologiesStack';
 import type { ITechnologies } from '../../type';
@@ -15,15 +15,17 @@ const technologiesFetch = async ():Promise<ITechnologies[]> => {
 const Technologies = () => {
     const technologiesPromise = technologiesFetch()
 
+    const [stacks, setStacks] = useState([])
+
     return (
         <div className='container'>
             <h2 className='font-bold text-4xl font-primary'>Explore the <span className='text-secondary'>Technologies</span></h2>
             <p className='font-secondary mt-2'>Pick one technology per category to build your ideal stack.</p>
 
-            <div className='flex gap-10 mt-10'>
+            <div className='block sm:flex gap-10 mt-10'>
                 <div className='w-12/12 sm:w-9/12'>
                     <Suspense fallback={<h2>Loading...</h2>}>
-                        <TechnologiesCards technologiesPromise={technologiesPromise}></TechnologiesCards>
+                        <TechnologiesCards technologiesPromise={technologiesPromise} stacks={stacks} setStacks={setStacks}></TechnologiesCards>
                     </Suspense>
                 </div>
                 <div className='w-12/12 sm:w-3/12'>
