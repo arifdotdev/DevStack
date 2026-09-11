@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+@theme {
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #ff6b1a;
+  --color-secondary: #ec4899;
+}
+
+.inter {
+  font-family: var(--font-primary);
+}
+
+.plus-jakarta-sans {
+  font-family: var(--font-secondary);
+}
+
+@utility btn-primary {
+  background: linear-gradient(to right, #ff6b1a, #ec4899);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+@utility btn-secondary {
+  background: #D91B7E;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary:hover {
+  background: #c01770;
+  color: white;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+ul.menu li {
+  cursor: pointer;
+}
