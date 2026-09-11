@@ -1,6 +1,8 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { ITechnologies } from '../../type';
 import { IoMdStar } from 'react-icons/io';
+import { FaCheck } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 interface TechnologyProps {
     technology: ITechnologies
@@ -13,6 +15,7 @@ const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
     const [isSelected, setIsSelected] = useState<boolean>(false)
     const handleAddStack = () => {
 
+        toast.success(`${technology.name} Successfully Added!`)
         setIsSelected(true)
     }
 
@@ -32,8 +35,8 @@ const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
             </div>
             <button
                 onClick={() => handleAddStack()}
-                className={`bg-black text-xl font-bold text-white font-primary py-2 w-full border rounded-2xl mt-3 cursor-pointer ${isSelected ? "active" : ""}`} disabled={isSelected}
-            >Add to Stock</button>
+                className={`bg-black font-bold text-white font-primary py-2 w-full border rounded-2xl mt-5 cursor-pointer flex items-center justify-center gap-2 ${isSelected ? "active" : ""}`} disabled={isSelected} 
+            >{isSelected ? <FaCheck /> : ""} Add to Stock</button>
         </div>
     );
 };
