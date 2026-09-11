@@ -17,6 +17,7 @@ const TechnologyCard = ({ technology }: { technology: ITechnologies }) => {
                 <div>{technology.difficulty}</div>
                 <div className='flex items-center'><span><IoMdStar /></span> {technology.rating}</div>
             </div>
+            <button className='bg-black text-xl font-bold text-white font-primary py-2 w-full border rounded-2xl mt-3 cursor-pointer active'>Add to Stock</button>
         </div>
     );
 };
