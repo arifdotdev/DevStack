@@ -13,10 +13,12 @@ interface TechnologyProps {
 const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
 
     const [isSelected, setIsSelected] = useState<boolean>(false)
-    const handleAddStack = () => {
+    const handleAddStack = (stack) => {
+
 
         toast.success(`${technology.name} Successfully Added!`)
         setIsSelected(true)
+        setStacks([...stacks, technology])
     }
 
 

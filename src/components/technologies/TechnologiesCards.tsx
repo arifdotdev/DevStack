@@ -10,7 +10,6 @@ export interface TechnologiesCardsProps {
 
 const TechnologiesCards = ({ technologiesPromise, stacks, setStacks }: TechnologiesCardsProps) => {
     const technologies = use(technologiesPromise)
-    console.log(technologies);
     return (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {
