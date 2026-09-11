@@ -29,7 +29,7 @@ const Technologies = () => {
                     </Suspense>
                 </div>
                 <div className='w-12/12 sm:w-3/12'>
-                    <TechnologiesStack stacks={stacks}></TechnologiesStack>
+                    <TechnologiesStack stacks={stacks} setStacks={setStacks}></TechnologiesStack>
                 </div>
             </div>
         </div>
