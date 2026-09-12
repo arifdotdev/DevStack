@@ -13,7 +13,7 @@ const technologiesFetch = async ():Promise<ITechnologies[]> => {
 
 
 const Technologies = () => {
-    const technologiesPromise = technologiesFetch()
+    const [technologiesPromise] = useState(()=> technologiesFetch()) 
 
     const [stacks, setStacks] = useState([])
 
