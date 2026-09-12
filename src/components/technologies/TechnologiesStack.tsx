@@ -9,8 +9,7 @@ interface TechnologiesStackProps {
     setIsSelected: Dispatch<SetStateAction<boolean>>
 }
 
-const TechnologiesStack = ({ stacks, setStacks, setIsSelected }: TechnologiesStackProps) => {
-    console.log(stacks);
+const TechnologiesStack = ({ stacks, setStacks }: TechnologiesStackProps) => {
 
     const handleRemoveStack = (stack: ITechnologies) => {
         const restStack = stacks.filter(s => s.name !== stack.name);

@@ -2,14 +2,14 @@ import logo from './../../assets/logo-text.png'
 
 const Navbar = () => {
     const links = <>
-        <li className='links'>Home</li>
-        <li>Technologies</li>
-        <li>Projects</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li className='links'><a href='#'>Home</a></li>
+        <li><a href="#">Technologies</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
     </>
     return (
-        <div className=" bg-base-100 shadow-sm sticky">
+        <div className=" bg-base-100 shadow-sm sticky top-0 z-50">
             <div className='container navbar'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -30,8 +30,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <a className="btn hidden  sm:flex items-center justify-center">Sign In</a>
-                    <a className="btn btn-secondary">Sign Up</a>
+                    <a className="btn hidden  sm:flex items-center justify-center border-2 border-orange-300-400 bg-transparent rounded cursor-pointer">Sign In</a>
+                    <a className="btn btn-secondary cursor-pointer">Sign Up</a>
                 </div>
             </div>
         </div>
