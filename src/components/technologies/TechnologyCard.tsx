@@ -1,4 +1,4 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { ITechnologies } from '../../type';
 import { IoMdStar } from 'react-icons/io';
 import { FaCheck } from 'react-icons/fa';
@@ -14,11 +14,11 @@ const TechnologyCard = ({ technology, stacks, setStacks, }: TechnologyProps) => 
 
     const isSelected = stacks.some(stack => stack.name === technology.name);
 
-    const handleAddStack = (stack) => {
+    const handleAddStack = () => {
 
-        if (isSelected) { 
+        if (isSelected) {
             toast.warning(`${technology.name} is already added to your stack!`);
-            return; 
+            return;
         }
 
         toast.success(`${technology.name} Successfully Added!`)

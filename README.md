@@ -1,75 +1,184 @@
-# React + TypeScript + Vite
+# DevStack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive technology stack builder built with React and TypeScript.
 
-Currently, two official plugins are available:
+Users can explore different technologies, select technologies for their stack, and easily manage their selected stack.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Live Demo
 
-## React Compiler
+<!-- Add your live website URL here -->
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## GitHub Repository
 
-## Expanding the ESLint configuration
+[GitHub Repository](https://github.com/arifdotdev/DevStack.git)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 1. Explore Technologies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Browse different technologies with their name, description, category, difficulty level, rating, and badge.
 
+### 2. Build Your Stack
+
+Add technologies to your personal stack and see your selected technologies in one place.
+
+### 3. Manage Your Stack
+
+Remove technologies from your stack whenever you want. The "Add to Stack" button also updates automatically when a technology is already selected.
+
+---
+
+## Technologies Used
+
+* React
+* TypeScript
+* Tailwind CSS
+* DaisyUI
+* React Icons
+* React Toastify
+* JavaScript / ES6
+* HTML5
+* CSS3
+
+---
+
+## Responsive Design
+
+The application is responsive and works smoothly across:
+
+* Mobile
+* Tablet
+* Desktop
+
+---
+
+# React Questions & Answers
+
+## 1. What is JSX, and why is it used in React?
+
+JSX is a syntax that lets us write HTML-like code inside JavaScript.
+
+It makes React components easier to write and understand because we can create the UI and JavaScript logic together.
+
+```jsx
+const title = <h1>Hello React</h1>;
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 2. What is the difference between props and state?
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Props are data passed from a parent component to a child component. They are read-only.
 
+State is data managed inside a component. When state changes, React updates the UI.
+
+```text
+Props → Parent → Child
+
+State → Component's own data
 ```
+
+---
+
+## 3. What does the `useState` hook do, and where did you use it in this project?
+
+`useState` is a React Hook used to create and manage state in a component.
+
+In this project, I used it to store the technologies selected by the user.
+
+```tsx
+const [stacks, setStacks] = useState<ITechnologies[]>([]);
+```
+
+When a user adds or removes a technology, the `stacks` state is updated.
+
+---
+
+## 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
+
+`useEffect` is used to perform side effects in a React component, such as fetching data, updating the document title, or working with external systems.
+
+For loading JSON data, `useEffect` can be used to fetch the data when the component loads.
+
+In this project, the technology data comes from a JSON file.
+
+---
+
+## 5. Why does every item in a `.map()` list need a unique `key` prop?
+
+React uses the `key` to identify each item in a list.
+
+It helps React understand which item was added, removed, or changed, so it can update the UI efficiently.
+
+Example:
+
+```tsx
+technologies.map(technology => (
+    <TechnologyCard
+        key={technology.name}
+        technology={technology}
+    />
+))
+```
+
+The key should be unique for each item.
+
+---
+
+## 6. What is conditional rendering? Show one place you used it.
+
+Conditional rendering means showing different UI depending on a condition.
+
+For example, in this project, the button changes when a technology is already added:
+
+```tsx
+{isSelected ? 'Added to Stack' : 'Add to Stack'}
+```
+
+I also used conditional rendering to show the empty stack message when no technology has been selected.
+
+---
+
+## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
+
+A parent passes data to a child using props.
+
+For example:
+
+```tsx
+<TechnologyCard
+    technology={technology}
+    stacks={stacks}
+    setStacks={setStacks}
+/>
+```
+
+Here, the parent sends `technology`, `stacks`, and `setStacks` to the child.
+
+The child can update the parent's state by using a function passed through props.
+
+For example:
+
+```tsx
+setStacks([...stacks, technology]);
+```
+
+So the basic flow is:
+
+```text
+Parent
+   ↓ props
+Child
+   ↓ callback / state setter
+Parent
+```
+
+---
+
+## Author
+
+Arif Mondol
+
+Built with React, TypeScript, and Tailwind CSS.

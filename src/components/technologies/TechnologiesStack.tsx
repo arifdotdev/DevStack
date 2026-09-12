@@ -1,13 +1,11 @@
-import React, { type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import type { ITechnologies } from '../../type';
-import { MdDelete } from 'react-icons/md';
 import { toast } from 'react-toastify';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 
 interface TechnologiesStackProps {
     stacks: ITechnologies[]
     setStacks: Dispatch<SetStateAction<ITechnologies[]>>
-    setIsSelected: Dispatch<SetStateAction<boolean>>
 }
 
 const TechnologiesStack = ({ stacks, setStacks }: TechnologiesStackProps) => {

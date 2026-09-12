@@ -1,11 +1,11 @@
-import React, { Suspense, useState } from 'react';
+import { Suspense, useState } from 'react';
 import TechnologiesCards from './TechnologiesCards';
 import TechnologiesStack from './TechnologiesStack';
 import type { ITechnologies } from '../../type';
 
 
 
-const technologiesFetch = async ():Promise<ITechnologies[]> => {
+const technologiesFetch = async (): Promise<ITechnologies[]> => {
     const res = await fetch('/data.json')
     const data = await res.json()
     return data;
@@ -13,9 +13,9 @@ const technologiesFetch = async ():Promise<ITechnologies[]> => {
 
 
 const Technologies = () => {
-    const [technologiesPromise] = useState(()=> technologiesFetch()) 
+    const [technologiesPromise] = useState(() => technologiesFetch())
 
-    const [stacks, setStacks] = useState([])
+    const [stacks, setStacks] = useState<ITechnologies[]>([])
 
     return (
         <div className='container'>
