@@ -10,7 +10,7 @@ const Navbar = () => {
     </>
     return (
         <div className=" bg-base-100 shadow-sm sticky top-0 z-50">
-            <div className='container navbar'>
+            <div className='container mx-auto navbar px-4 sm:px-6 lg:px-8'>
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl"><img src={logo} alt="logo" /></a>
+                    <a className="btn btn-ghost p-2"><img src={logo} alt="logo" className="w-28 sm:w-32 lg:w-36 h-auto"/></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-3 font-secondary">
@@ -30,8 +30,19 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <a className="btn border-2 border-orange-400 bg-transparent text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition cursor-pointer">Sign In</a>
-                    <a className="btn btn-primary cursor-pointer">Sign Up</a>
+                    <a className="btn
+                            btn-sm sm:btn-md
+                            border-2 border-orange-400
+                            bg-transparent
+                            text-orange-400
+                            rounded-lg
+                            hover:bg-orange-400
+                            hover:text-white
+                            transition
+                            cursor-pointer">Sign In</a>
+                    <a className="btn btn-primary
+                            btn-sm sm:btn-md
+                            cursor-pointer">Sign Up</a>
                 </div>
             </div>
         </div>

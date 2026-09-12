@@ -11,7 +11,7 @@ export interface TechnologiesCardsProps {
 const TechnologiesCards = ({ technologiesPromise, stacks, setStacks }: TechnologiesCardsProps) => {
     const technologies = use(technologiesPromise)
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
             {
                 technologies.map((technology, index) => <TechnologyCard technology={technology} stacks={stacks} setStacks={setStacks} key={index}></TechnologyCard>)
             }
