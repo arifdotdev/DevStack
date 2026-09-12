@@ -2,6 +2,7 @@ import React, { type Dispatch, type SetStateAction } from 'react';
 import type { ITechnologies } from '../../type';
 import { MdDelete } from 'react-icons/md';
 import { toast } from 'react-toastify';
+import { RiDeleteBin6Line } from 'react-icons/ri';
 
 interface TechnologiesStackProps {
     stacks: ITechnologies[]
@@ -18,7 +19,7 @@ const TechnologiesStack = ({ stacks, setStacks }: TechnologiesStackProps) => {
     }
     const handleRemoveAllStacks = () => {
         setStacks([])
-        toast.error('Removed All Stacks!')
+        toast.error('Deleted All Stacks!')
     }
 
     return (
@@ -40,10 +41,10 @@ const TechnologiesStack = ({ stacks, setStacks }: TechnologiesStackProps) => {
                                             <p className='font-secondary text-sm font-light'>{stack.category}</p>
                                         </div>
                                     </div>
-                                    <button onClick={() => handleRemoveStack(stack)} className='text-3xl text-orange-400 cursor-pointer '><MdDelete /></button>
+                                    <button onClick={() => handleRemoveStack(stack)} className='text-2xl text-orange-400 cursor-pointer '><RiDeleteBin6Line /></button>
                                 </div>)
                             }
-                            <button onClick={handleRemoveAllStacks} className='btn border-2 border-orange-300-400 bg-transparent rounded w-full'>Remove All Stack</button>
+                            <button onClick={handleRemoveAllStacks} className='btn border-2 border-orange-400 bg-transparent text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition w-full'>Remove All</button>
                         </div>
                 }
             </div>

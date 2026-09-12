@@ -19,7 +19,7 @@ const Technologies = () => {
 
     return (
         <div className='container'>
-            <h2 className='font-bold text-4xl font-primary'>Explore the <span className='text-secondary'>Technologies</span></h2>
+            <h2 className='font-bold text-4xl font-primary'>Explore the <span className='bg-gradient-to-r from-[#ff6b1a] to-[#ec4899] bg-clip-text text-transparent'>Technologies</span></h2>
             <p className='font-secondary mt-2'>Pick one technology per category to build your ideal stack.</p>
 
             <div className='block sm:flex gap-10 mt-10'>

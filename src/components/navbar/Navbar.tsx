@@ -30,8 +30,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-2">
-                    <a className="btn hidden  sm:flex items-center justify-center border-2 border-orange-300-400 bg-transparent rounded cursor-pointer">Sign In</a>
-                    <a className="btn btn-secondary cursor-pointer">Sign Up</a>
+                    <a className="btn border-2 border-orange-400 bg-transparent text-orange-400 rounded-lg hover:bg-orange-400 hover:text-white transition cursor-pointer">Sign In</a>
+                    <a className="btn btn-primary cursor-pointer">Sign Up</a>
                 </div>
             </div>
         </div>

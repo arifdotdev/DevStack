@@ -4,7 +4,7 @@ import logo from './../../assets/logo-text.png'
 const Footer = () => {
     return (
         <footer className="border-t border-gray-200 bg-white mt-20">
-            <div className="mx-auto max-w-6xl px-6 py-12">
+            <div className="mx-auto container py-12">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
 
                     <div className="md:col-span-2">
@@ -65,7 +65,7 @@ const Footer = () => {
 
             {/* Bottom Footer */}
             <div className="border-t border-gray-100">
-                <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mx-auto flex container flex-col gap-3 py-5 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
                     <p>© 2026 DevStack. All rights reserved.</p>
 
                     <div className="flex gap-5">

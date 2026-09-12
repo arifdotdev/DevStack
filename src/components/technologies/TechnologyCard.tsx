@@ -17,6 +17,7 @@ const TechnologyCard = ({ technology, stacks, setStacks, }: TechnologyProps) => 
     const handleAddStack = (stack) => {
 
         if (isSelected) { 
+            toast.warning(`${technology.name} is already added to your stack!`);
             return; 
         }
 
@@ -41,7 +42,7 @@ const TechnologyCard = ({ technology, stacks, setStacks, }: TechnologyProps) => 
             </div>
             <button
                 onClick={() => handleAddStack()}
-                className={`bg-black font-bold text-white font-primary py-2 w-full border rounded-2xl mt-5 cursor-pointer flex items-center justify-center gap-2 ${isSelected ? "active" : ""}`} disabled={isSelected} 
+                className={`btn font-bold text-white font-primary py-2 w-full border rounded-2xl mt-5 cursor-pointer flex items-center justify-center gap-2 ${isSelected ? "active" : "btn-primary"}`}
             >{isSelected && <FaCheck />} {isSelected ? 'Added to Stack' : 'Add to Stack'}</button>
         </div>
     );
