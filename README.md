@@ -6,7 +6,7 @@ Users can explore different technologies, select technologies for their stack, a
 
 ## Live Demo
 
-<!-- Add your live website URL here -->
+https://candid-starship-3d2382.netlify.app/
 
 ## GitHub Repository
 
@@ -62,11 +62,6 @@ JSX is a syntax that lets us write HTML-like code inside JavaScript.
 
 It makes React components easier to write and understand because we can create the UI and JavaScript logic together.
 
-```jsx
-const title = <h1>Hello React</h1>;
-```
-
----
 
 ## 2. What is the difference between props and state?
 
@@ -74,27 +69,13 @@ Props are data passed from a parent component to a child component. They are rea
 
 State is data managed inside a component. When state changes, React updates the UI.
 
-```text
-Props → Parent → Child
-
-State → Component's own data
-```
-
----
 
 ## 3. What does the `useState` hook do, and where did you use it in this project?
 
 `useState` is a React Hook used to create and manage state in a component.
 
-In this project, I used it to store the technologies selected by the user.
+its use in, When a user adds or removes a technology, the `stacks` state is updated.
 
-```tsx
-const [stacks, setStacks] = useState<ITechnologies[]>([]);
-```
-
-When a user adds or removes a technology, the `stacks` state is updated.
-
----
 
 ## 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
@@ -102,9 +83,6 @@ When a user adds or removes a technology, the `stacks` state is updated.
 
 For loading JSON data, `useEffect` can be used to fetch the data when the component loads.
 
-In this project, the technology data comes from a JSON file.
-
----
 
 ## 5. Why does every item in a `.map()` list need a unique `key` prop?
 
@@ -112,34 +90,15 @@ React uses the `key` to identify each item in a list.
 
 It helps React understand which item was added, removed, or changed, so it can update the UI efficiently.
 
-Example:
-
-```tsx
-technologies.map(technology => (
-    <TechnologyCard
-        key={technology.name}
-        technology={technology}
-    />
-))
-```
-
-The key should be unique for each item.
-
----
 
 ## 6. What is conditional rendering? Show one place you used it.
 
 Conditional rendering means showing different UI depending on a condition.
 
-For example, in this project, the button changes when a technology is already added:
-
-```tsx
 {isSelected ? 'Added to Stack' : 'Add to Stack'}
-```
 
 I also used conditional rendering to show the empty stack message when no technology has been selected.
 
----
 
 ## 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
@@ -158,27 +117,3 @@ For example:
 Here, the parent sends `technology`, `stacks`, and `setStacks` to the child.
 
 The child can update the parent's state by using a function passed through props.
-
-For example:
-
-```tsx
-setStacks([...stacks, technology]);
-```
-
-So the basic flow is:
-
-```text
-Parent
-   ↓ props
-Child
-   ↓ callback / state setter
-Parent
-```
-
----
-
-## Author
-
-Arif Mondol
-
-Built with React, TypeScript, and Tailwind CSS.
