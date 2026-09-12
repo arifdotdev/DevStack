@@ -25,11 +25,11 @@ const Technologies = () => {
             <div className='block sm:flex gap-10 mt-10'>
                 <div className='w-12/12 sm:w-9/12'>
                     <Suspense fallback={<h2>Loading...</h2>}>
-                        <TechnologiesCards technologiesPromise={technologiesPromise} stacks={stacks} setStacks={setStacks}></TechnologiesCards>
+                        <TechnologiesCards technologiesPromise={technologiesPromise} stacks={stacks} setStacks={setStacks} ></TechnologiesCards>
                     </Suspense>
                 </div>
                 <div className='w-12/12 sm:w-3/12'>
-                    <TechnologiesStack stacks={stacks} setStacks={setStacks}></TechnologiesStack>
+                    <TechnologiesStack stacks={stacks} setStacks={setStacks} ></TechnologiesStack>
                 </div>
             </div>
         </div>

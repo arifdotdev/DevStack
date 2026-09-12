@@ -6,13 +6,14 @@ import { toast } from 'react-toastify';
 interface TechnologiesStackProps {
     stacks: ITechnologies[]
     setStacks: Dispatch<SetStateAction<ITechnologies[]>>
+    setIsSelected: Dispatch<SetStateAction<boolean>>
 }
 
-const TechnologiesStack = ({ stacks, setStacks }: TechnologiesStackProps) => {
+const TechnologiesStack = ({ stacks, setStacks, setIsSelected }: TechnologiesStackProps) => {
     console.log(stacks);
 
     const handleRemoveStack = (stack: ITechnologies) => {
-        const restStack = stacks.filter(s => s.name !== stack.name)
+        const restStack = stacks.filter(s => s.name !== stack.name);
         setStacks(restStack)
         toast.error(`${stack.name} deleted!`)
     }

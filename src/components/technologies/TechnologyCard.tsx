@@ -6,19 +6,23 @@ import { toast } from 'react-toastify';
 
 interface TechnologyProps {
     technology: ITechnologies
-    stacks: ITechnologies
+    stacks: ITechnologies[]
     setStacks: Dispatch<SetStateAction<ITechnologies[]>>
 }
 
-const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
+const TechnologyCard = ({ technology, stacks, setStacks, }: TechnologyProps) => {
 
-    const [isSelected, setIsSelected] = useState<boolean>(false)
+    const isSelected = stacks.some(stack => stack.name === technology.name);
+
     const handleAddStack = (stack) => {
 
+        if (isSelected) { 
+            return; 
+        }
 
         toast.success(`${technology.name} Successfully Added!`)
-        setIsSelected(true)
         setStacks([...stacks, technology])
+
     }
 
 
@@ -38,7 +42,7 @@ const TechnologyCard = ({ technology, stacks, setStacks }: TechnologyProps) => {
             <button
                 onClick={() => handleAddStack()}
                 className={`bg-black font-bold text-white font-primary py-2 w-full border rounded-2xl mt-5 cursor-pointer flex items-center justify-center gap-2 ${isSelected ? "active" : ""}`} disabled={isSelected} 
-            >{isSelected ? <FaCheck /> : ""} Add to Stock</button>
+            >{isSelected && <FaCheck />} {isSelected ? 'Added to Stack' : 'Add to Stack'}</button>
         </div>
     );
 };

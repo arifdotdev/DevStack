@@ -13,7 +13,7 @@ const TechnologiesCards = ({ technologiesPromise, stacks, setStacks }: Technolog
     return (
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {
-                technologies.map((technology, index) => <TechnologyCard technology={technology} stacks={stacks} setStacks = { setStacks } key={index}></TechnologyCard>)
+                technologies.map((technology, index) => <TechnologyCard technology={technology} stacks={stacks} setStacks={setStacks} key={index}></TechnologyCard>)
             }
         </div>
     )

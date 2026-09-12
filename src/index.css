@@ -42,8 +42,6 @@
   cursor: pointer;
 }
 
-
-
 .btn-primary:hover {
   opacity: 0.9;
 }
@@ -57,6 +55,7 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+
 ul.menu li {
   cursor: pointer;
 }
@@ -65,4 +64,8 @@ ul.menu li {
   background-color: transparent;
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary)
+}
+
+.links{
+  color: var(--color-secondary);
 }

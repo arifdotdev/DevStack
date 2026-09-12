@@ -2,14 +2,14 @@ import logo from './../../assets/logo-text.png'
 
 const Navbar = () => {
     const links = <>
-        <li>Home</li>
+        <li className='links'>Home</li>
         <li>Technologies</li>
         <li>Projects</li>
         <li>About</li>
         <li>Contact</li>
     </>
     return (
-        <div className=" bg-base-100 shadow-sm">
+        <div className=" bg-base-100 shadow-sm sticky">
             <div className='container navbar'>
                 <div className="navbar-start">
                     <div className="dropdown">
